@@ -1,0 +1,275 @@
+% Mehul_Resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2007-2010 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+
+% Edited it, according to my needs.
+\documentclass[letterpaper,10pt]{article}
+
+%-----------------------------------------------------------
+\usepackage[empty]{fullpage}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+\definecolor{mygrey}{gray}{0.80} % Inner background color of title bars (0 = black, 1 = white)
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins to 0.5in on all sides
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}
+%\addtolength{\textheight}{1.0in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+\newcommand{\ressubheadinged}[4]{
+\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4}\\
+\end{tabular*}\vspace{-6pt}}
+
+%-----------------------------------------------------------
+
+\begin{document}
+
+\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
+\textbf{\large Mehul Prajapati}\\
+Embedded Linux Developer & mehulprajapati2802@gmail.com \\
+\href{http://mehul-m-prajapati.github.io/}{mehul-m-prajapati.github.io} &
+\href{https://www.linkedin.com/in/mehulmp}{linkedin.com/mehulmp}\\
+\end{tabular*}
+\\
+
+\vspace{0.1in}
+
+%---------------
+% Education
+%---------------
+\resheading{Education}
+\begin{itemize}
+\item
+\ressubheadinged{Dharmsinh Desai University}{Nadiad}{B.E. Electronics and Communication}{2008 - 2012}
+\end{itemize}
+
+%------------------------------
+% Professional experience
+%------------------------------
+\resheading{Work Experience (3.6 years)}
+\begin{itemize}
+
+\item
+	\ressubheading{Upwork}{Remote}{}{Freelancer, September 2016 - present}
+	\begin{itemize}
+		\resitem{Working on web development projects.}(Python, Django, OpenCV)
+	\end{itemize}
+
+\item
+	\ressubheading{Mobile Internet India Pvt Ltd.}{Ahmedabad, India}{}{Embedded Engineer, April 2016 - present}
+	\begin{itemize}
+		\resitem{Working in Protocol Stack Development team.}
+	\end{itemize}
+
+\item
+	\ressubheading{Volansys Technologies Pvt Ltd.}{Ahmedabad, India}{}{Embedded Software Engineer, October 2014 - July 2015}
+	\begin{itemize}
+		\resitem{Contributed in Board bring up activity.}
+	\end{itemize}
+
+\item
+	\ressubheading{eInfochips Pvt Ltd.}{Ahmedabad, India}{}{Embedded Software Engineer, January 2014 - October 2014}
+	\begin{itemize}
+		\resitem{Worked on Linux kernel porting and customization.}
+	\end{itemize}
+
+\item
+	\ressubheading{Matrix Comsec Pvt Ltd.}{Ahmedabad, India}{}{Software Developer, August 2012 - January 2014}
+	\begin{itemize}
+		\resitem{Upgrading Telecom products as per new requirements.}
+	\end{itemize}
+
+\end{itemize}
+
+%------------------------------
+% Technical Skills
+%------------------------------
+\resheading{Technical Skills}
+\begin{itemize}
+\item \textbf{Programming Languages:} C, C++, HTML, CSS, JavaScript, XML
+\item \textbf{Scripting Languages:} Linux Bash Shell, Python, Selenium Webdriver, Tcl-Tk
+\item \textbf{Database:} SQLite, MySQL
+\item \textbf{Web frameworks:} Django, Angular2.0
+\item \textbf{OS:} Linux (Ubuntu), Windows
+\item \textbf{Linux Programming:} Multithreading, IPC, TCP/IP Socket Programming, Cross building, Makefile
+\item \textbf{Version Control Systems:} git, svn
+\item \textbf{Bus Protocols:} SPI, I2C, CAN, UART
+\item \textbf{Network Protocols:} HTTP, TCP, UDP, FTP, Radius, Syslog, SNMP
+\item \textbf{Development boards:} Raspberry Pi, Beaglebone Black, TM4C123
+\item \textbf{Software Tools:} Eclipse CDT, Keil $\mu$Vision 4, Code Blocks, Code Composer Studio, vim, QT Creator, gdb
+
+\end{itemize}
+
+%------------------------------
+% Org Skills
+%------------------------------
+\resheading{Organizational Skills}
+\begin{itemize}
+\item \textbf{Analytical Skills:} Developed during my employment when I was responsible for product feature feasibility.
+\item \textbf{Teamwork and Task Estimation:} Skills acquired at university by doing curriculum projects in small teams.
+
+\end{itemize}
+
+%------------------------------
+% Other Skills
+%------------------------------
+\resheading{Other Skills}
+\begin{itemize}
+\item \textbf{Swimming, Chess:} Active member of sports club
+\item \textbf{Puzzle Solving, Competitive Programming:} Practiced as an independent
+\end{itemize}
+, 
+%------------------------------
+% Volunteer
+%------------------------------
+\resheading{Volunteer}
+\begin{itemize}
+
+\item
+	\ressubheading{Python Express}{Remote}{Mentor}{Mentor, Sept 2016 - present}
+	\begin{itemize}
+		\resitem{Guiding university students to get a kickstart into the world of Python.}
+	\end{itemize}
+	
+\item
+	\ressubheading{Mozilla}{Remote}{Firefox Student Ambassador}{Firefox Student Ambassador, July 2016 - present}
+	\begin{itemize}
+		\resitem{Actively participating in mozilla community meetups and events.}
+		\resitem{Contributing to various mozilla open source projects on GitHub.}
+	\end{itemize}
+	
+\end{itemize}
+
+%------------------------------
+% MOOCs
+%------------------------------
+\resheading{Online Courses}
+\begin{itemize}
+\item \textbf{edx:} Introduction to Linux, Embedded Systems, Introduction to OpenStack
+\item \textbf{Coursera:} Learn to Program
+
+\end{itemize}
+%------------------------------
+% Major Projects
+%------------------------------
+\resheading{Major Projects}
+\begin{itemize}
+
+\item
+    % Project Title
+    \textbf{Embedded SMS Server}
+    
+    % Description
+    A customer had requested a feature in the Matrix IP-PBX products to convert the SMS to Email and Email to SMS. The project involved adding the required features by following SMTP and POP3 protocols.
+
+    % Tasks done
+	\begin{itemize}
+		\resitem{Development of SMS PDU Encoding \& Decoding module by following GSM 3.40 standard.}
+		
+		\resitem{Development of SMS sender, SMS receiver \& SMS delivery modules to handle all SMS related activity on system.}
+	    
+	    \resitem{Development of algorithm that handles multi part SMS in SMS Receiver module by using linked list data structure.}
+	    
+	    \resitem{Development of System timer, syslog \& message queue software modules.}
+	    
+	    \resitem{Development of bash shell scripts and Makefiles to cross compile software modules.}
+        
+        \resitem{Development of wrapper module using libiconv open source library to encode/decode UTF-8 characters.}
+        
+        \resitem{Software Design \& QA release documentation.}
+		
+	\end{itemize}
+	
+\item
+    % Project Title
+    \textbf{Real time IP data traffic accounting}
+    
+    % Description
+    Accounting IP data consumption of users and showing its real time graph on web application.
+    
+	% Tasks done
+	\begin{itemize}
+	    \resitem{Configuring and setting up PMacct utility on Ubuntu server.}
+	
+	    \resitem{Development of Radius protocol dissection module for authenticating users.}
+		
+		\resitem{Integrating Radius decoder module into PMacct.}
+	\end{itemize}
+	
+\item
+    % Project Title
+    \textbf{Analyze marine sensors data over the internet (IoT)}
+	
+	% Description
+    Fetching marine sensors data from CAN bus and sending it over the internet.
+    
+    % Tasks done
+	\begin{itemize}
+	    \resitem{Board Bring up of TI AM335x Cortex-A8 industrial application based development board.}
+	
+	    \resitem{Porting customized Linux Kernel 3.2 on TI AM335x Cortex-A8 based development board.}
+	    
+	    \resitem{Development of SQLite wrapper utility which manages data in SQLite database.}
+	    
+	    \resitem{Setting up Canboat utility which fetches NMEA2000 compliant marine sensor data from CAN bus, decodes it and sends it over TCP/IP network for analysis.}
+
+	\end{itemize}
+	
+\item
+    % Project Title
+    \textbf{Thin client on ARMv7 based development board}
+    
+    % Tasks done
+	\begin{itemize}
+	    \resitem{Porting of Ubuntu 12.04 file system and board support package on ARMv7 based development board.}
+	    
+	    \resitem{Bug fixing in GPU linux device driver.}
+	    
+	    \resitem{Implementation of hot plug HDMI event by using udev rules.}
+	    
+	\end{itemize}
+	
+\item
+    % Project Title
+    \textbf{Computer Telephony Integration}
+    
+    % Description
+    This project involves the development of TSP (Telephony service provider) driver for Matrix IP-PBX products.
+    
+    % Tasks done
+	\begin{itemize}
+	    \resitem{Development of TCP socket client application which sends proprietary protocol data.}
+	    
+	    \resitem{Development of “Windows Registry” module which would add/modify the configuration of any software installed in the windows system.}
+	    
+	    \resitem{Development of CTI wireshark dissector which decodes proprietary protocol data for analysis.}
+	    
+	\end{itemize}
+
+\end{itemize}
+
+\end{document}
