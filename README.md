@@ -1,1 +1,1 @@
-# My Resume in Tex and Pdf formats
+# Resume in LaTex (New skill ;)
