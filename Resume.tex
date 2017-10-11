@@ -7,21 +7,22 @@
 % This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
 
 % Edited it, according to my needs.
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
 %-----------------------------------------------------------
 \usepackage[empty]{fullpage}
 \usepackage{color}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{fontawesome}
+\usepackage{enumitem}
 
 %-----------------------------------------------------------
 %Edit these values as you see fit
-\definecolor{mygrey}{gray}{0.80} % Inner background color of title bars (0 = black, 1 = white)
+\definecolor{mygrey}{rgb}{0.86, 0.84, 0.82} % Inner background color of title bars (0 = black, 1 = white)
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
-
 % Adjust margins to 0.5in on all sides
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
@@ -30,44 +31,51 @@
 %\addtolength{\textheight}{1.0in}
 
 %-----------------------------------------------------------
-%Custom commands
+% Custom commands
+
+% newly added
+\newcommand{\lineunder} {
+    \vspace*{-20pt} \\
+    \hspace*{-3pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+%-----------------------------------------------------------
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+
 \newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+
 \newcommand{\ressubheading}[4]{
-\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+\begin{tabular*}{7.3in}{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & \textit{#4} \\
 \end{tabular*}\vspace{-6pt}}
 
 \newcommand{\ressubheadinged}[4]{
-\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+\begin{tabular*}{7.3in}{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & #2 \\
 		\textit{#3} & \textit{#4}\\
 \end{tabular*}\vspace{-6pt}}
-
 %-----------------------------------------------------------
-
 \begin{document}
 
 \begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
-
 %---------------------------------------------------
 % Name and Websites
 %---------------------------------------------------
 \textbf{\large Mehul Prajapati}\\
-
 %---------------------------------------------------
 % Linkedin
 %---------------------------------------------------
-{\textbf{Embedded Linux Developer}} & {{Linkedin:} \href{https://www.linkedin.com/in/mehulmp}{mehulmp}}\\
+{\textbf{Embedded Software Developer}} & {{\faLinkedin} \href{https://www.linkedin.com/in/mehulmp}{linkedin.com/in/mehulmp}}\\
 %---------------------------------------------------
 % Github
 %---------------------------------------------------
 {Email:} {mehulprajapati2802@gmail.com} &
-{{GitHub:} \href{http://www.github.com/mehul-m-prajapati/}{mehul-m-prajapati}}\\
-
-{Contact:} {+91-9428123392} &
-{{Website:} \href{http://mehul-m-prajapati.github.io/}{mehul-m-prajapati.github.io}}
-
+{{\faGithub} \href{http://www.github.com/mehul-m-prajapati/}{github.com/mehul-m-prajapati}}\\
+{Contact:} {+91-9428123392}
 \end{tabular*}
 \\
 \vspace{0.1in}
@@ -76,45 +84,46 @@
 % Education
 %---------------------------------------------------
 \resheading{Education}
+\setlist[itemize]{leftmargin=5.0mm}
 \begin{itemize}
 \item
-\ressubheadinged{Dharmsinh Desai University}{GPA: 3.3/4}{B.E. Electronics and Communication}{2008 - 2012}
+\textbf{Dharmsinh Desai University} \hfill{Nadiad, India}\\
+\textit{B.Eng in Electronics and Communication, GPA: 3.3/4} \hfill \textit{July 2008 - May 2012}
 \end{itemize}
 
 %---------------------------------------------------
 % Professional experience
 %---------------------------------------------------
-\resheading{Work Experience (4 years)}
+\resheading{Professional Experience (4.3 years)}
 \begin{itemize}
 
 \item
-	\ressubheading{Mobile Internet India Pvt Ltd.}{Ahmedabad, India}{}{Senior Embedded Engineer, April 2016 - present}
-	\begin{itemize}
-		\resitem{Working in a Protocol Stack Development team.}(C, TCP/IP Networking, Firmware)
+	\textbf{Mobile Internet India Pvt Ltd} \hfill{Ahmedabad, India}\\
+	\textit{Senior Embedded Engineer} \hfill{Apr 2016 - present}
+	\begin{itemize} \vspace{-2mm}
+		\resitem{Development of Radius protocol sub-dissectors in wireshark 2.4.0 source code.}
+		\resitem{Development of Python scripts to automake tasks.}
 	\end{itemize}
 
 \item
-	\ressubheading{Upwork}{Remote}{}{Freelancer, September 2016 - present}
-	\begin{itemize}
-		\resitem{Working on web development projects.}(Python, Django, OpenCV)
+	\textbf{Volansys Technologies Pvt Ltd} \hfill{Ahmedabad, India}\\
+	\textit{Embedded Software Engineer} \hfill{Oct 2014 - July 2015} 
+	\begin{itemize} \vspace{-2mm}
+		\resitem{Board Support package porting on ARMv7 based Marvel board.}
 	\end{itemize}
 
 \item
-	\ressubheading{Volansys Technologies Pvt Ltd.}{Ahmedabad, India}{}{Embedded Software Engineer, October 2014 - July 2015}
-	\begin{itemize}
-		\resitem{Worked in Board bring up of ARMv7 compliant Thin client.}(C, Board Support Package)
+	\textbf{eInfochips Pvt Ltd} \hfill{Ahmedabad, India}\\
+	\textit{Embedded Software Engineer} \hfill{Jan 2014 - Oct 2014}
+	\begin{itemize} \vspace{-2mm}
+		\resitem{Evaluation of TI6630K2L board peripherals.}
 	\end{itemize}
 
 \item
-	\ressubheading{eInfochips Pvt Ltd.}{Ahmedabad, India}{}{Embedded Software Engineer, January 2014 - October 2014}
-	\begin{itemize}
-		\resitem{Worked on Linux kernel porting and customization.}(C, Firmware)
-	\end{itemize}
-
-\item
-	\ressubheading{Matrix Comsec Pvt Ltd.}{Ahmedabad, India}{}{Software Developer, August 2012 - January 2014}
-	\begin{itemize}
-		\resitem{Upgrading Telecom products with new features as per requirements.}(C, Makefile, IPC)
+	\textbf{Matrix Comsec Pvt Ltd} \hfill{Vadodara, India}\\
+	\textit{Software Developer} \hfill{Aug 2012 - Jan 2014}
+	\begin{itemize} \vspace{-2mm}
+		\resitem{Development of new features as per requirements for IP-PBX telecom products.}
 	\end{itemize}
 
 \end{itemize}
@@ -124,21 +133,21 @@
 %---------------------------------------------------
 \resheading{Technical Skills}
 \begin{itemize}
-\item \textbf{Programming Languages:} C, HTML, CSS, JavaScript, XML, LaTeX
-\item \textbf{Scripting Languages:} Linux Bash Shell, Python
-\item \textbf{Database:} SQLite, MySQL
-\item \textbf{Machine Learning Libraries:} NumPy, Scikit-learn, Pandas, Matplotlib
-\item \textbf{Frameworks/Libraries:} Django, OpenCV
-\item \textbf{OS:} Linux (Ubuntu), Windows
-\item \textbf{Linux Programming:} Multithreading, IPC, TCP/IP Socket Programming, Cross building, Makefile
-\item \textbf{Version Control Systems:} git, svn
-\item \textbf{Bus Protocols:} SPI, I2C, CAN, UART
-\item \textbf{Network Protocols:} HTTP, TCP, UDP, FTP, RADIUS, Syslog, SNMP
-\item \textbf{Development boards:} Raspberry Pi, Beaglebone Black, TM4C123, Intel Galileo, NodeMCU ESP8266
-\item \textbf{Software Tools:} Eclipse CDT, Keil $\mu$Vision 4, vim, gdb, Code Composer Studio, Atmel studio, Anaconda, Jupyter-Notebook
-\item \textbf{Software Engineering Methods:}: SCRUM
+
+    \item \textbf{Programming Languages:} C, Python, Linux Bash Shell, LaTeX, HTML, CSS, XML
+    \item \textbf{Databases:} SQLite, MySQL
+    \item \textbf{Frameworks/Libraries:} Flask, NumPy, Scikit-learn, Pandas, Matplotlib
+    \item \textbf{Linux Programming:} Multithreading, IPC, TCP/IP Socket Programming, Makefile
+    \item \textbf{OS:} Linux (Ubuntu), Windows
+    \item \textbf{Version Control Systems:} git, svn
+    \item \textbf{Bus Protocols:} SPI, I2C, CAN, UART
+    \item \textbf{Network Protocols:} HTTP, TCP, UDP, Radius, Syslog, SNMP, SMPP
+    \item \textbf{Development boards:} Raspberry Pi, Beaglebone Black, TM4C123, Intel Galileo, NodeMCU ESP8266
+    \item \textbf{Software Tools:} Eclipse CDT, Keil $\mu$Vision 4, Code Composer Studio, Visual Studio, PyCharm, Jupyter-Notebook, vim
+    \item \textbf{Software Engineering Methods:}: Scrum
 
 \end{itemize}
+
 
 %---------------------------------------------------
 % Other Skills
@@ -148,6 +157,7 @@
         \item \textbf{Swimming, Chess:} Active member of sports club
         \item \textbf{Puzzle Solving, Competitive Programming:} Practicing as an independent
     \end{itemize}
+
         
 %---------------------------------------------------
 % Achievements & Awards
@@ -210,48 +220,74 @@
 %---------------------------------------------------                                      
         \item \textbf{Goethe Zentrum:} German language (Level - A2)
     \end{itemize}
-    
 %---------------------------------------------------
 % Major Projects
 %---------------------------------------------------
 \resheading{Professional Projects}
 \begin{itemize}
+\item
+    % Project Title
+    \textbf{Proprietary Wireshark} (C, TCP/IP Networking)
+    
+    % Description
+    Enhancements of Radius protocol dissector. 
+    
+    % Tasks done
+	\begin{itemize}
+	    \resitem{Developed sub-dissectors in wireshark to decode specific parts of the customized Radius protocol.}
+	    \resitem{Implemented new display filters of proprietary dissected fields.}
+	    \resitem{Maintained Radius protocol states dynamically and showed state information on packet details pane of wireshark GUI.}
+	   	\end{itemize}
+\item
+    % Project Title
+    \textbf{Data logger for Maritime (IoT)}
+	
+	% Description
+    Fetching marine sensors' data from CAN bus and sending it over the internet. (C, Linux kernel, SQLite, \href{https://github.com/mehul-m-prajapati/canboat}{canboat})
+    
+    % Tasks done
+	\begin{itemize}
+	    \resitem{Ported custom Linux kernel 3.2 on TI AM335x Cortex-A8 based development board.}
+	    
+	    \resitem{Developed SQLite wrapper utility which manages data in SQLite database.}
+	    
+	    \resitem{Customized canboat utility which fetches NMEA2000 compliant marine sensor data from CAN bus, decodes it and transmits to the cloud for analysis.}
+
+	\end{itemize}
+
+\item
+    % Project Title
+    \textbf{Thin client on ARMv7 based development board}
+    
+    % Description
+    A customer wanted to build a dual display package on ARMv7 based board for thin client application. (C, BSP)
+    % Tasks done
+	\begin{itemize}
+	    \resitem{Ported Ubuntu 12.04 file-system and Board Support Package on Marvell PXA2128 SoC based development board.}
+	    
+	    \resitem{Implemented hot plug HDMI event by using udev rules.}
+	    
+	\end{itemize}
 
 \item
     % Project Title
     \textbf{Embedded SMS Server}
     
     % Description
-    A customer had requested a feature in the Matrix IP-PBX products to convert the SMS to Email and Email to SMS. The project involved adding the required features by following SMTP and POP3 protocols. (C, IPC, Makefile)
+    Development of a server to convert the SMS to Email and Email to SMS in the Matrix IP-PBX products. The project involved developing the required features by following SMTP and POP3 protocols. (C, IPC, Makefile)
 
     % Tasks done
 	\begin{itemize}
 		\resitem{Developed SMS PDU Encoder and Decoder module by following GSM 3.40 standard.}
 		
-		\resitem{Developed SMS sender, SMS receiver, SMS delivery and System Timer modules to handle all SMS related activity on the system by leveraging finite state machine algorithm and linked list data structure.}
-	    
-	    \resitem{Customized Syslog and Busybox open source utilities.}
-	  
-	    \resitem{Developed a wrapper module to encode and decode Unicode characters into UTF-8 format using \href{https://github.com/bnoordhuis/libiconv}{libiconv} open source library.}
-        
-        \resitem{Developed bash shell scripts and Makefiles to cross compile software modules.}
-		
-	\end{itemize}
+		\resitem{Developed SMS sender, SMS receiver, SMS delivery and System Timer modules to handle all SMS related activity on the system.}
+	  	
+	  	\resitem{Customized Syslog and Busybox open source utilities.}
 
-\item
-    % Project Title
-    \textbf{Real time IP data traffic accounting}
-    
-    % Description
-    Accounting IP data consumption of users and showing its real time graph on web application. (C, MySQL, TCP/IP Networking, \href{https://github.com/mehul-m-prajapati/pmacct}{PMacct})
-    
-	% Tasks done
-	\begin{itemize}
-	    \resitem{Customized promiscuous mode accounting(PMacct) utility for IP data accounting in MySQL database.}
-	
-	    \resitem{Developed RADIUS protocol dissection module and integrated it into PMacct.}
-	    
-	    \resitem{Developed an algorithm which maps IMSI with IP address to maintain call states in PMacct by leveraging Hash table.} 
+	    \resitem{Developed a wrapper module to encode and decode Unicode characters into UTF-8 format using \href{https://github.com/bnoordhuis/libiconv}{libiconv}.}
+        
+        \resitem{Developed bash shell scripts and makefiles to cross compile software modules.}
+		
 	\end{itemize}
 	
 \item
@@ -268,41 +304,21 @@
 		\resitem{Configured HPE VAN SDN controller to do packet filtering and tagging.}
 		
     \end{itemize}
-	
+    
 \item
     % Project Title
-    \textbf{Thin client on ARMv7 based development board}
+    \textbf{Real time IP data traffic accounting}
     
     % Description
-    A customer wanted to build a dual display package on ARMv7 based board for thin client application. It also involved porting of customized ubuntu file system. In that file system we have supported different applications like firefox, totem media player, document viewer and and gstreamer media framework. (C, BSP)
-    
-    % Tasks done
+    Accounting IP data consumption of users and showing its real time graph on web application. (C, MySQL, TCP/IP Networking, \href{https://github.com/mehul-m-prajapati/pmacct}{PMacct})
+	% Tasks done
 	\begin{itemize}
-	    \resitem{Ported Ubuntu 12.04 file-system and Board Support Package on Marvell PXA2128 SoC based development board.}
-	    
-	    \resitem{Porting of firefox by using scratchbox2 toolkit.}
-	    
-	    \resitem{Implemented hot plug HDMI event by using udev rules.}
-	    
-	\end{itemize}
+	    \resitem{Customized promiscuous mode accounting(PMacct) utility to store accounting data in MySQL database.}
 	
-\item
-    % Project Title
-    \textbf{Analyze marine sensors data over the internet (IoT)}
-	
-	% Description
-    Fetching marine sensors data from CAN bus and sending it over the internet. (C, Linux kernel, SQLite, \href{https://github.com/mehul-m-prajapati/canboa}{CAN boat})
-    
-    % Tasks done
-	\begin{itemize}
-	    \resitem{Board Bring up of TI AM335x Cortex-A8 industrial application based development board.}
-	
-	    \resitem{Ported custom Linux Kernel 3.2 on TI AM335x Cortex-A8 based development board.}
+	    \resitem{Developed Radius protocol decoder module using raddump library and integrated it into PMacct.}
 	    
-	    \resitem{Developed SQLite wrapper utility which manages data in SQLite database.}
+	    \resitem{Developed an algorithm which maps IMSI with IP address to maintain call states in PMacct.}
 	    
-	    \resitem{Customized CAN Boat utility which fetches NMEA2000 compliant marine sensor data from CAN bus, decodes it and sends over TCP/IP network for analysis.}
-
 	\end{itemize}
 	
 \item
@@ -334,7 +350,7 @@
 	    \resitem{Developed “Windows Registry” module which would add/modify the configuration of any software installed in the windows system.}
 	    
 	\end{itemize}
-
+	
 \end{itemize}
 
 \end{document}
