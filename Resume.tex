@@ -11,24 +11,45 @@
 \usepackage{amsmath}
 \usepackage{fontawesome}
 \usepackage{enumitem}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage{fancyhdr}
 
-%-----------------------------------------------------------
-%Edit these values as you see fit
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins to 0.5in on all sides
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+%-----------------------------------------------
+% Edit these values as you see fit
+%-----------------------------------------------
 \definecolor{mygrey}{rgb}{0.86, 0.84, 0.82} % Inner background color of title bars (0 = black, 1 = white)
+
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
-% Adjust margins to 0.5in on all sides
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.5in}
-%\addtolength{\textheight}{1.0in}
 
-%-----------------------------------------------------------
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+%----------------------------------
 % Custom commands
-
-% newly added
+%----------------------------------
 \newcommand{\lineunder} {
     \vspace*{-20pt} \\
     \hspace*{-3pt} \hrulefill \\
@@ -38,7 +59,7 @@
     {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
     \vspace*{-6pt} \lineunder
 }
-%-----------------------------------------------------------
+%-------------------------------------
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
 
 \newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
@@ -53,24 +74,54 @@
 		\textbf{#1} & #2 \\
 		\textit{#3} & \textit{#4}\\
 \end{tabular*}\vspace{-6pt}}
-%-----------------------------------------------------------
+
+%-------------------------
+% New Custom commands
+%-------------------------
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
+
 %---------------------------------------------------
 % Name and Websites
 %---------------------------------------------------
 \textbf{\large Mehul Prajapati}\\
+
 %---------------------------------------------------
 % Linkedin
 %---------------------------------------------------
-{\textbf{Embedded Software Developer}} & {{\faLinkedin} \href{https://www.linkedin.com/in/mehulmp}{linkedin.com/in/mehulmp}}\\
+{Email:} {mehulprajapati2802@gmail.com} & {{\faLinkedin} \href{https://www.linkedin.com/in/mehulmp}{linkedin.com/in/mehulmp}}\\
+
 %---------------------------------------------------
 % Github
 %---------------------------------------------------
-{Email:} {mehulprajapati2802@gmail.com} &
-{{\faGithub} \href{http://www.github.com/mehul-m-prajapati/}{github.com/mehul-m-prajapati}}\\
-{Contact:} {+91-9428123392}
+{Mobile:} {+1-514-431-2331} &
+{{\faGithub} \href{http://www.github.com/mehul-m-prajapati/}{github.com/mehul-m-prajapati}}
 \end{tabular*}
 \\
 \vspace{0.1in}
@@ -83,11 +134,11 @@
 \begin{itemize}
 \item
     \textbf{Concordia University} \hfill{Montreal, Canada}\\
-    \textit{Masters in Applied Computer Science} \hfill \textit{Sept 2018 - May 2020 (Expected)}
+    \textit{Master of Applied Computer Science} \hfill \textit{Sept 2018 - May 2020 (Expected)}
     
     \item
     \textbf{Dharmsinh Desai University} \hfill{Nadiad, India}\\
-    \textit{B.E. in Electronics and Communication} \hfill \textit{July 2008 - May 2012}
+    \textit{Bachelor of Engineering in Electronics and Communication} \hfill \textit{July 2008 - May 2012}
 \end{itemize}
 
 %---------------------------------------------------
@@ -97,34 +148,43 @@
 \begin{itemize}
 
 \item
-	\textbf{Google Summer of Code} \hfill{Intern, May 2018 - Aug 2018}\\
+	\textbf{Google Summer of Code} 
+	\hfill{Remote}\\
+	\textit{Intern} \hfill{May 2018 - Aug 2018}
 	\begin{itemize} \vspace{-2mm}
-		\resitem{Development of Redis based queue interface plugin.}  \hfill{Remote}
+		\resitem{Development of Redis based queue interface plugin into \href{https://github.com/mehul-m-prajapati/gsoc-queue-interface}{syslog-ng} software.}
 	\end{itemize}
 
 \item
-	\textbf{Mobile Internet India Pvt Ltd} \hfill{Senior Embedded Software Engineer, Apr 2016 - Aug 2018}\\
+	\textbf{Mobile Internet India Pvt Ltd} \hfill{Ahmedabad, India}\\
+	\textit{Senior Embedded Software Engineer} \hfill{Apr 2016 - Aug 2018}
 	\begin{itemize} \vspace{-2mm}
-		\resitem{Development of Radius protocol sub-dissectors in wireshark 2.4.0 source code.} \hfill{Ahmedabad, India}
+		\resitem{Development of Radius protocol sub-dissectors in wireshark 2.4.0 source code.}
 	\end{itemize}
 
 \item
-	\textbf{Volansys Technologies Pvt Ltd} \hfill{Embedded Software Engineer, Oct 2014 - July 2015}\\
+	\textbf{Volansys Technologies Pvt Ltd}
+	\hfill{Ahmedabad, India}\\ 
+	\textit{Embedded Software Engineer}
+	\hfill{Oct 2014 - July 2015}\\
 	\begin{itemize} \vspace{-2mm}
-		\resitem{Board Support package porting on ARMv7 based Marvel board.} \hfill{Ahmedabad, India}
+		\resitem{Board Support package porting on ARMv7 based Marvel board.}
 	\end{itemize}
 
 \item
-	\textbf{eInfochips Pvt Ltd} \hfill{Embedded Software Engineer, Jan 2014 - Oct 2014}\\
+	\textbf{eInfochips Pvt Ltd} 
+	\hfill{Ahmedabad, India}\\
+	\textit{Embedded Software Engineer} \hfill{Jan 2014 - Oct 2014}\\
 	\begin{itemize} \vspace{-2mm}
-		\resitem{Evaluation of TI6630K2L board peripherals.} \hfill{Ahmedabad, India}
+		\resitem{Evaluation of TI6630K2L board peripherals.}
 	\end{itemize}
 
 \item
-	\textbf{Matrix Comsec Pvt Ltd} \hfill{Software Developer, Aug 2012 - Jan 2014}\\
+	\textbf{Matrix Comsec Pvt Ltd} 
+	\hfill{Vadodara, India}\\
+	\textit{Software Developer} \hfill{Aug 2012 - Jan 2014}\\
 	\begin{itemize} \vspace{-2mm}
 		\resitem{Development of new features as per requirements for IP-PBX telecom products.}
-		\hfill{Vadodara, India}
 	\end{itemize}
 
 \end{itemize}
@@ -133,33 +193,84 @@
 % Technical Skills
 %---------------------------------------------------
 \resheading{Technical Skills}
-\begin{itemize}
 
-    \item \textbf{Programming Languages:} C, Python, Linux Bash Shell, LaTeX
-    \item \textbf{Databases:} SQLite, MySQL
+\begin{itemize}
+    \item \textbf{Programming Languages:} C, C++, Python, Linux Bash Shell, LaTeX
+    \vspace{-4pt}
+    
+    \item \textbf{Databases:} SQLite, MySQL, Redis
+    \vspace{-4pt}
+
     \item \textbf{Machine Learning libraries:} NumPy, Scikit-learn, Pandas, Matplotlib, Keras, Tensorflow
+    \vspace{-4pt}
+    
     \item \textbf{Linux Programming:} Multithreading, IPC, TCP/IP Socket Programming, Makefile
+    \vspace{-4pt}
+    
     \item \textbf{Platforms:} Linux (Ubuntu), Windows
+    \vspace{-4pt}
+
     \item \textbf{Version Control Systems:} git, svn
-    \item \textbf{Bus Protocols:} SPI, I2C, CAN
+    \vspace{-4pt}
+    
+    \item \textbf{Bus Protocols:} SPI, I2C, CAN, UART
+    \vspace{-4pt}
+    
     \item \textbf{Network Protocols:} HTTP, TCP, UDP, Radius, Syslog, SNMP, MQTT
-    \item \textbf{Development boards:} Raspberry Pi, Beaglebone Black, TM4C123, Intel Galileo, NodeMCU ESP8266
-    \item \textbf{Software Tools:} Eclipse CDT, Keil $\mu$Vision 4, Code Composer Studio, Visual Studio, PyCharm, Jupyter-Notebook, vim, JIRA
-    \item \textbf{Software Engineering Methods:}: Scrum
+    \vspace{-4pt}
+
+    \item \textbf{Software Tools:} Eclipse CDT, Visual Studio, PyCharm, Jupyter-Notebook, vim
+    \vspace{-4pt}
+
+    \item \textbf{Software Engineering Methods:} Scrum
+    \vspace{-4pt}
 
 \end{itemize}
 
+
+%---------------------------------------------------
+% MOOCs
+%---------------------------------------------------
+\resheading{Online Courses}
+    \begin{itemize}
+        \item \textbf{edx:}
+%---------------------------------------------------
+%                       edx
+%---------------------------------------------------
+        \href{https://www.edx.org/course/embedded-systems-shape-world-utaustinx-ut-6-03x} {Embedded Systems},
+        \href{https://www.edx.org/course/introduction-computer-science-harvardx-cs50x}{Introduction to Computer Science}
+%---------------------------------------------------
+%                     Coursera
+%---------------------------------------------------      
+        \item \textbf{Coursera:}
+        \href{https://www.coursera.org/account/accomplishments/verify/F3R98BGKE2DT}{Neural Networks and Deep Learning},
+        \href{https://www.coursera.org/learn/machine-learning}{Machine Learning},
+        \href{https://www.coursera.org/account/accomplishments/certificate/GNKLPUTLLDGD}{Learn to Program: The Fundamentals}
+
+    \end{itemize}
 %---------------------------------------------------
 % Major Projects
 %---------------------------------------------------
-\resheading{Professional Projects}
+\resheading{Projects}
+      
 \begin{itemize}
+\item
+    \textbf{Sentiment Analysis} 
+    
+    It categorizes a sentence and user's tweets as positive or negative. (Python, nltk)
+
+\item
+    \textbf{Queue Interface} 
+    
+    Development of Redis based queue interface which could be used to store debug messages to prevent message loss in syslog-ng. (C, Redis)
+
 \item
     % Project Title
     \textbf{Embedded SMS Server}
     
     % Description
     Development of a server to convert the SMS to Email and Email to SMS in the Matrix IP-PBX products. The project involved developing the required features by following SMTP and POP3 protocols. (C, IPC, Makefile)
+    \vspace{-8pt}
 
     % Tasks done
 	\begin{itemize}
@@ -181,7 +292,8 @@
     
     % Description
     Enhancements of Radius protocol dissector. (C, TCP/IP Networking)
-    
+    \vspace{-8pt}
+
     % Tasks done
 	\begin{itemize}
 	    \resitem{Developed sub-dissectors in wireshark to decode proprietary attributes of the Radius protocol.}
@@ -195,6 +307,7 @@
 	
 	% Description
     Fetching marine sensors' data from CAN bus and sending it over the internet. (C, Linux kernel, SQLite, \href{https://github.com/mehul-m-prajapati/canboat}{canboat})
+    \vspace{-8pt}
     
     % Tasks done
 	\begin{itemize}
@@ -212,6 +325,8 @@
     
     % Description
     Accounting IP data consumption of users and plot real time graph on web application. (C, MySQL, TCP/IP Networking, \href{https://github.com/mehul-m-prajapati/pmacct}{PMacct})
+    \vspace{-8pt}
+
 	% Tasks done
 	\begin{itemize}
 	    \resitem{Customized promiscuous mode accounting(PMacct) utility to store accounting data in MySQL database.}
@@ -228,6 +343,7 @@
 	
 	% Description
 	This project involved integration of iptables code into freeradius on firewall server. (C, Linux)
+    \vspace{-8pt}
 	
 	 % Tasks done
 	\begin{itemize}
